@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suspension Simulator</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Suspension Simulator</h1>
+    <div class="notice">simulasi suspensi pegas</div>
+
+    <div class="card">
+      <h3>Parameter Suspensi</h3>
+      <div class="grid" id="paramsContainer">
+        <!-- Parameter akan di-generate oleh JS -->
+      </div>
+      <button id="runBtn">Pencet untuk simulasi</button>
+      <button id="resetBtn">Reset ke default</button>
+    </div>
+
+    <div id="status" class="status">Siap menghitung...</div>
+
+    <div id="results" class="results">
+      <h3>Hasil Simulasi</h3>
+      <div class="info">
+        <div><span>Motion Ratio (ℓ)</span><strong id="ell">-</strong></div>
+        <div><span>k_eq efektif</span><strong id="k_eff">-</strong> N/m</div>
+        <div><span>c_eq efektif</span><strong id="c_eff">-</strong> N·s/m</div>
+      </div>
+
+      <div class="plots">
+        <div class="plot"><canvas id="pivotCanvas"></canvas><h4>Posisi Pivot (mm)</h4></div>
+        <div class="plot"><canvas id="zsCanvas"></canvas><h4>Sprung Mass Displacement (m)</h4></div>
+        <div class="plot"><canvas id="zuCanvas"></canvas><h4>Unsprung Mass Displacement (m)</h4></div>
+        <div class="plot"><canvas id="yCanvas"></canvas><h4>Shock Travel (mm)</h4></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
